@@ -4,20 +4,22 @@ import java.util.ArrayList;
 
 public class Item {
     private String name;
-    private boolean online;
+    private boolean purchased;
 
-    public Item(String name, boolean online){
+    public Item(String name, boolean purchased){
         this.name = name;
-        this.online = online;
+        this.purchased = purchased;
     }
 
     public String getName(){
         return name;
     }
 
-    public boolean isOnline() {
-        return online;
+    public boolean isPurchased() {
+        return purchased;
     }
+
+    public void purchaseItem(){this.purchased=true;}
 
     private static int lastId = 0;
 
@@ -25,7 +27,7 @@ public class Item {
         ArrayList<Item> items = new ArrayList<Item>();
 
         for(int i = 1; i <= numItems; i++){
-            items.add(new Item("com.example.grocerylist.Item " + ++lastId, i <=numItems/2));
+            items.add(new Item("Item " + ++lastId, false));
         }
 
         return items;
