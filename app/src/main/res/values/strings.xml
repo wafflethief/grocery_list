@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Grocery List</string>
+    <string name="element_text">element_text</string>
 </resources>
