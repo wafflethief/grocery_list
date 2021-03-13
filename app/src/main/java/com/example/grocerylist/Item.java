@@ -23,11 +23,12 @@ public class Item {
 
     private static int lastId = 0;
 
-    public static ArrayList<Item> createList(int numItems){
+    public static ArrayList<Item> createList(int numItems, String itemName){
         ArrayList<Item> items = new ArrayList<Item>();
 
         for(int i = 1; i <= numItems; i++){
-            items.add(new Item("Item " + ++lastId, false));
+            //items.add(new Item("" + ++lastId, false));
+           items.add(new Item(itemName, false));
         }
 
         return items;

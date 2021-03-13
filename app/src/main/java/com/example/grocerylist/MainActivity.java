@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     ArrayList<Item> list;
     Button addItemButton;
+    String itemName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,17 +23,22 @@ public class MainActivity extends AppCompatActivity {
 
         RecyclerView rvItems = (RecyclerView) findViewById(R.id.rv_items);
 
-        list = Item.createList(10);
+        list = Item.createList(0, "");
         ItemsAdapter adapter = new ItemsAdapter(list);
         rvItems.setAdapter(adapter);
         rvItems.setLayoutManager(new LinearLayoutManager(this));
+        Bundle bundle = getIntent().getExtras();
+        if(bundle != null){
+            itemName= bundle.getString("data");
+        }
+
         addItemButton = (Button) findViewById(R.id.add_button);
         addItemButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int curSize = adapter.getItemCount();
 
-                ArrayList<Item> newList = Item.createList(1);
+                ArrayList<Item> newList = Item.createList(1, itemName);
 
                 list.addAll(newList);
                 adapter.notifyItemRangeInserted(curSize, newList.size());
