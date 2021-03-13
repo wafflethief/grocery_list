@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         if(bundle != null){
             itemName= bundle.getString("data");
         }
-
+/*
         addItemButton = (Button) findViewById(R.id.add_button);
         addItemButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +43,6 @@ public class MainActivity extends AppCompatActivity {
                 list.addAll(newList);
                 adapter.notifyItemRangeInserted(curSize, newList.size());
             }
-        });
+        });*/
     }
 }
