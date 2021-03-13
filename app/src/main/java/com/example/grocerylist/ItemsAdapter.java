@@ -33,7 +33,7 @@ public class ItemsAdapter extends
         public TextView textView;
         public Button button;
         public EditText myText;
-        //public CustomEditTextListener myTextListener;
+        public CustomEditTextListener myTextListener;
 
         public ViewHolder(View itemView){
             super(itemView);
@@ -51,7 +51,7 @@ public class ItemsAdapter extends
         LayoutInflater inflater = LayoutInflater.from(context);
 
         View itemsView = inflater.inflate(R.layout.item_row, parent, false);
-        ViewHolder vH = new ViewHolder(itemsView);//, new CustomEditTextListener());
+        ViewHolder vH = new ViewHolder(itemsView);
         return vH;
     }
 
@@ -75,7 +75,6 @@ public class ItemsAdapter extends
 
     public void addRow(String itemName){
         items.add(new Item(itemName, false));
-
     }
 
     private class CustomEditTextListener implements TextWatcher {

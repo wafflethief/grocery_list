@@ -34,29 +34,29 @@ public class MainActivity extends AppCompatActivity {
             itemName = bundle.getString("data");
         }
 
-        /*addItemButton = (Button) findViewById(R.id.add_button);
+        addItemButton = (Button) findViewById(R.id.add_button);
         addItemButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                //String etv = sendButton();
+                String etv = sendButton();
                 //adapter.addRow(etv);
 
                 int curSize = adapter.getItemCount();
 
-                ArrayList<Item> newList = Item.createList(1, itemName);
+                ArrayList<Item> newList = Item.createList(1, etv);//itemName);
 
                 list.addAll(newList);
                 adapter.notifyItemRangeInserted(curSize, newList.size());
             }
-        });*/
+        });
     }
-    /*
+
     public String sendButton() {
         EditText editText = (EditText) findViewById(R.id.edit_text);
         String editTextValue = editText.getText().toString();
 
         return editTextValue;
         //adapter.addRow(editTextValue);
-    }*/
+    }
 }
