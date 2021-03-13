@@ -44,7 +44,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
+        android:text="add item"
         />
+    <EditText
+        android:id="@+id/edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-156dp"
+        android:layout_marginBottom="-28dp"
+        android:background="#CCCCCC"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="#0099FF">
+        <requestFocus />
+    </EditText>
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import java.util.ArrayList;
 
@@ -28,14 +30,17 @@ public class MainActivity extends AppCompatActivity {
         rvItems.setAdapter(adapter);
         rvItems.setLayoutManager(new LinearLayoutManager(this));
         Bundle bundle = getIntent().getExtras();
-        if(bundle != null){
-            itemName= bundle.getString("data");
+        if (bundle != null) {
+            itemName = bundle.getString("data");
         }
 
-        addItemButton = (Button) findViewById(R.id.add_button);
+        /*addItemButton = (Button) findViewById(R.id.add_button);
         addItemButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //String etv = sendButton();
+                //adapter.addRow(etv);
 
                 int curSize = adapter.getItemCount();
 
@@ -44,6 +49,14 @@ public class MainActivity extends AppCompatActivity {
                 list.addAll(newList);
                 adapter.notifyItemRangeInserted(curSize, newList.size());
             }
-        });
+        });*/
     }
+    /*
+    public String sendButton() {
+        EditText editText = (EditText) findViewById(R.id.edit_text);
+        String editTextValue = editText.getText().toString();
+
+        return editTextValue;
+        //adapter.addRow(editTextValue);
+    }*/
 }

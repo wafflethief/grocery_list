@@ -1,10 +1,13 @@
 package com.example.grocerylist;
 
 import android.content.Context;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -29,12 +32,16 @@ public class ItemsAdapter extends
     public class ViewHolder extends RecyclerView.ViewHolder{
         public TextView textView;
         public Button button;
+        public EditText myText;
+        //public CustomEditTextListener myTextListener;
 
         public ViewHolder(View itemView){
             super(itemView);
-
             textView = (TextView) itemView.findViewById(R.id.item_name);
             button = (Button) itemView.findViewById(R.id.button1);
+            myText = (EditText) itemView.findViewById(R.id.edit_text);
+            /*myTextListener = textListener;
+            this.myText.addTextChangedListener(myTextListener);*/
         }
     }
 
@@ -44,8 +51,7 @@ public class ItemsAdapter extends
         LayoutInflater inflater = LayoutInflater.from(context);
 
         View itemsView = inflater.inflate(R.layout.item_row, parent, false);
-
-        ViewHolder vH = new ViewHolder(itemsView);
+        ViewHolder vH = new ViewHolder(itemsView);//, new CustomEditTextListener());
         return vH;
     }
 
@@ -69,5 +75,31 @@ public class ItemsAdapter extends
 
     public void addRow(String itemName){
         items.add(new Item(itemName, false));
+
     }
+
+    private class CustomEditTextListener implements TextWatcher {
+        private int position;
+
+        public void updatePosition(int position) {
+            this.position = position;
+        }
+
+        @Override
+        public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+            // no op
+        }
+
+        @Override
+        public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable editable) {
+            // no op
+        }
+    }
+
 }
+
