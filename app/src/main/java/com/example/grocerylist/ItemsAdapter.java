@@ -39,7 +39,7 @@ public class ItemsAdapter extends
             super(itemView);
             textView = (TextView) itemView.findViewById(R.id.item_name);
             button = (Button) itemView.findViewById(R.id.button1);
-            myText = (EditText) itemView.findViewById(R.id.edit_text);
+            //myText = (EditText) itemView.findViewById(R.id.edit_text);
             /*myTextListener = textListener;
             this.myText.addTextChangedListener(myTextListener);*/
         }
